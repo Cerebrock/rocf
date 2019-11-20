@@ -211,7 +211,7 @@ class ROCFGenerator(keras.utils.Sequence):
     
     def __get_img_ROCF(self,path):
         
-        return imread(path, as_grey=True, origin='lower')
+        return imread(path, as_grey=True)
     
     def __draw_polygons(self,polygons, h, w, t=1):
         canv = np.zeros(shape=(h,w))
