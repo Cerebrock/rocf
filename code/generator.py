@@ -163,8 +163,9 @@ class ROCFGenerator(keras.utils.Sequence):
         return polygons, img    
     
     
-    def __Image_Rey_polygons_combinations(self,base_polygons, h, w, n, priors= None, sigma = 1):
-        if priors == None:
+    def __Image_Rey_polygons_combinations(self,base_polygons, h, w, n_range=(5, len(base_polygons)), priors= None, sigma = 1):
+	n = np.random.randint(*n_range)        
+	if priors == None:
             priors = [poly.shape[0]/sum(poly.shape[0] for poly in base_polygons) for poly in base_polygons]
         
         polygons = np.random.choice(base_polygons, replace = False, size = n, p = priors)
@@ -177,8 +178,8 @@ class ROCFGenerator(keras.utils.Sequence):
 
         #print('__Rey_load_image_data_by_Id:','self.h:',self.h,'self.w:',self.w)
         
-        comb = self.__Image_Rey_polygons_combinations(self.polygons_ROCF, self.img_ROCF_h, self.img_ROCF_w,10)
-        Rey_img = self.seq.augment_image(comb)
+        comb = self.__Image_Rey_polygons_combinations(self.polygons_ROCF, self.img_ROCF_h, self.img_ROCF_w)
+        Rey_img = self.seq.augment_image(comb) 
         
         #imsave('Img_'+str(Id)+'.png', Rey_img)
         
