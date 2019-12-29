@@ -1,5 +1,22 @@
 
-# viewer = jupyterlab_dash.AppViewer()
+import dash
+from dash.exceptions import PreventUpdate
+from dash.dependencies import Input, Output, State
+import dash_html_components as html
+from dash_table import DataTable
+from dash_canvas import DashCanvas
+from dash_canvas.utils import (array_to_data_url, parse_jsonstring,
+                              watershed_segmentation)
+from skimage import io, color, img_as_ubyte
+import numpy as np
+
+#!pip instal jupyter-plotly-dash pip install dash_daq dash_canvas jupyterlab-dash
+#!jupyter labextension install jupyterlab-dash
+
+import json
+import jupyterlab_dash
+
+#viewer = jupyterlab_dash.AppViewer()
 app = dash.Dash(__name__)
 app.config.suppress_callback_exceptions = True
 
