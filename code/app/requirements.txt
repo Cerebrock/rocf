@@ -1,5 +1,7 @@
 dash
 dash-canvas
 dash-daq
+dash-table
 pandas
 gunicorn
+dash-core-components

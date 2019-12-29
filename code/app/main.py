@@ -14,11 +14,12 @@ import numpy as np
 #!jupyter labextension install jupyterlab-dash
 
 import json
-import jupyterlab_dash
 
+#import jupyterlab_dash
 #viewer = jupyterlab_dash.AppViewer()
+
 app = dash.Dash(__name__)
-app.config.suppress_callback_exceptions = True
+# app.config.suppress_callback_exceptions = True
 
 filename = 'https://github.com/Cerebrock/ROCF/raw/master/imgs/ROCF.png'
 canvas_width = 800
@@ -58,9 +59,6 @@ app.layout = html.Div([
 #            [Input('bg-width-slider', 'value')])
 #def update_canvas_linewidth(value):
 #    return value
-
-
-
 
 
 @app.callback(Output('annot-canvas-table', 'data'),
