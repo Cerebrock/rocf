@@ -1,10 +1,10 @@
-#viewer = jupyterlab_dash.AppViewer()
+
+# viewer = jupyterlab_dash.AppViewer()
 app = dash.Dash(__name__)
 app.config.suppress_callback_exceptions = True
 
 filename = 'https://github.com/Cerebrock/ROCF/raw/master/imgs/ROCF.png'
 canvas_width = 800
-app = dash.Dash(__name__)
 ####
 
 img = io.imread(filename, as_gray=True)
@@ -54,13 +54,6 @@ def update_data(string):
     else:
         raise PreventUpdate
     return data['objects'][1:]
-
-
-
-#####
-
-
-# viewer.show(app)
 
 
 if __name__ == '__main__':
