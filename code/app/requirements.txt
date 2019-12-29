@@ -1,0 +1,5 @@
+dash
+dash-canvas
+dash-daq
+pandas
+gunicorn
