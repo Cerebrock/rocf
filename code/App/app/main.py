@@ -22,6 +22,7 @@ import pandas as pd
 #viewer = jupyterlab_dash.AppViewer()
 
 app = dash.Dash(__name__)
+app.title = 'ROCF'
 # app.config.suppress_callback_exceptions = True
 
 rocf_url = 'https://github.com/Cerebrock/ROCF/raw/master/imgs/ROCF.png'
